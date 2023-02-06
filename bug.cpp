@@ -141,6 +141,8 @@ int main(int argc, char *argv[]) {
         assert(fs::file_size(full_filename_path) ==
                request_size * iteration);
     }
+    printf("Done Test\n");
     MPI_Barrier(MPI_COMM_WORLD);
+    MPI_Finalize();
     return 0;
 }

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(unifyfs-bug)
-set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${CMAKE_SOURCE_DIR}/dependency/.spack-env/view ${CMAKE_SOURCE_DIR}/external/UnifyFS/install   ${CMAKE_BINARY_DIR}/lib/cmake)
+set(UNIFYFS_INSTALL /usr/workspace/iopp/software/tailorfs/dependency/.spack-env/view)
+set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${CMAKE_SOURCE_DIR}/dependency/.spack-env/view ${UNIFYFS_INSTALL} ${CMAKE_BINARY_DIR}/lib/cmake)
 #message(${CMAKE_PREFIX_PATH})
 set(CMAKE_CXX_STANDARD 17)
 set(BUG_CMAKE_DIR ${CMAKE_SOURCE_DIR}/CMake)
