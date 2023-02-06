@@ -1,5 +1,6 @@
 # unifyfs-bug
 
+## The bug comes in multi-node case only.
 
 ## Instructions
 
