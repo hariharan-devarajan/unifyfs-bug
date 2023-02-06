@@ -1,0 +1,10 @@
+/.idea/
+/cmake-build-debug/
+/dependency/.spack-env/
+/dependency/spack.lock
+/external/UnifyFS/install/bin/
+/external/UnifyFS/install/etc/unifyfs/
+/external/UnifyFS/install/include/
+/external/UnifyFS/install/lib/
+/external/UnifyFS/install/libexec/
+/external/UnifyFS/install/sbin/
