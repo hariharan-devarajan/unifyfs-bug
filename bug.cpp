@@ -9,6 +9,8 @@
 namespace fs = std::experimental::filesystem;
 
 int main(int argc, char *argv[]) {
+    int bug = 1;
+    if (argc > 1) bug = atoi(argv[1]);
     MPI_Init(&argc, &argv);
     int comm_rank, comm_size;
     MPI_Comm_rank(MPI_COMM_WORLD, &comm_rank);
@@ -113,7 +115,7 @@ int main(int argc, char *argv[]) {
 
     fs::path full_filename_path;
     full_filename_path = fs::path("/dev/shm") / filename;
-
+    if (bug == 1) {
     unifyfs_transfer_request mv_req;
     mv_req.src_path = unifyfs_filename.c_str();
     mv_req.dst_path = full_filename_path.c_str();
@@ -130,11 +132,11 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-
-
+    }
     MPI_Barrier(MPI_COMM_WORLD);
-
+    if (bug == 2) {
     rc = unifyfs_finalize(fshdl);
+    }
     assert(rc == UNIFYFS_SUCCESS);
     MPI_Barrier(MPI_COMM_WORLD);
     if (comm_rank == 0) {

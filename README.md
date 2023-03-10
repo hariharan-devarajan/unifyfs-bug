@@ -29,6 +29,12 @@
   UNIFYFS_LOG_DIR=$UNIFYFS_LOG_DIR UNIFYFS_SERVER_CORES=8 ${UNIFYFS_ROOT_DIR}/bin/unifyfs start --share-dir=${pfs}/unifyfs/share-dir -d
   ```
 - Run code
+  ## Bug 1
   ```bash
-  jsrun -r 1 -a 1 -c 1  -d packed $PWD/cmake-build-debug/unifyfs-bug
+  jsrun -r 1 -a 1 -c 1  -d packed $PWD/cmake-build-debug/unifyfs-bug 1
+  ```
+  ## Bug 2
+
+  ```bash
+  jsrun -r 1 -a 1 -c 1  -d packed $PWD/cmake-build-debug/unifyfs-bug 2
   ```
