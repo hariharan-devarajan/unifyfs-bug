@@ -47,6 +47,13 @@ int main(int argc, char *argv[]) {
     options_ct++;
     strcpy(client_node_local_extents, "off");
     options_ct++;
+    const int SEC=1000;
+    char client_timeout[32];
+    strcpy(client_timeout, std::to_string(5*SEC).c_str());
+    options_ct++;
+    char server_timeout[32];
+    strcpy(server_timeout, std::to_string(15*SEC).c_str());
+    options_ct++;
 
     unifyfs_cfg_option *options = static_cast<unifyfs_cfg_option *>(
             calloc(options_ct, sizeof(unifyfs_cfg_option)));
@@ -65,6 +72,10 @@ int main(int argc, char *argv[]) {
             .opt_value = client_local_extents};
     options[7] = {.opt_name = "client.node_local_extents",
             .opt_value = client_node_local_extents};
+    options[8] = {.opt_name = "margo.client_timeout",
+            .opt_value = client_timeout};
+    options[9] = {.opt_name = "margo.server_timeout",
+            .opt_value = server_timeout};
     const char *val = unifyfs_path.c_str();
 
     int rc = unifyfs_initialize(val, options, options_ct, &fshdl);
@@ -116,33 +127,36 @@ int main(int argc, char *argv[]) {
     fs::path full_filename_path;
     full_filename_path = fs::path("/dev/shm") / filename;
     if (bug == 1) {
-    unifyfs_transfer_request mv_req;
-    mv_req.src_path = unifyfs_filename.c_str();
-    mv_req.dst_path = full_filename_path.c_str();
-    mv_req.mode = UNIFYFS_TRANSFER_MODE_COPY;
-    mv_req.use_parallel = 1;
-    rc = unifyfs_dispatch_transfer(fshdl, 1, &mv_req);
-    assert(rc == UNIFYFS_SUCCESS);
-    if (rc == UNIFYFS_SUCCESS) {
-        int waitall = 1;
-        rc = unifyfs_wait_transfer(fshdl, 1, &mv_req, waitall);
-        if (rc == UNIFYFS_SUCCESS) {
-            for (int i = 0; i < (int)1; i++) {
-                assert(mv_req.result.error == 0);
-            }
-        }
-    }
+      printf("Running transfer\n");
+      unifyfs_transfer_request mv_req;
+      mv_req.src_path = unifyfs_filename.c_str();
+      mv_req.dst_path = full_filename_path.c_str();
+      mv_req.mode = UNIFYFS_TRANSFER_MODE_COPY;
+      mv_req.use_parallel = 1;
+      rc = unifyfs_dispatch_transfer(fshdl, 1, &mv_req);
+      assert(rc == UNIFYFS_SUCCESS);
+      if (rc == UNIFYFS_SUCCESS) {
+          int waitall = 1;
+          rc = unifyfs_wait_transfer(fshdl, 1, &mv_req, waitall);
+          if (rc == UNIFYFS_SUCCESS) {
+              for (int i = 0; i < (int)1; i++) {
+                  assert(mv_req.result.error == 0);
+              }
+          }
+      }
+      if (comm_rank == 0) {
+        assert(fs::file_size(full_filename_path) ==
+               request_size * iteration);
+      }
     }
     MPI_Barrier(MPI_COMM_WORLD);
     if (bug == 2) {
-    rc = unifyfs_finalize(fshdl);
+      printf("Running finalize\n");
+      rc = unifyfs_finalize(fshdl);
     }
     assert(rc == UNIFYFS_SUCCESS);
     MPI_Barrier(MPI_COMM_WORLD);
-    if (comm_rank == 0) {
-        assert(fs::file_size(full_filename_path) ==
-               request_size * iteration);
-    }
+
     printf("Done Test\n");
     MPI_Barrier(MPI_COMM_WORLD);
     MPI_Finalize();
