@@ -80,10 +80,10 @@ int main(int argc, char *argv[]) {
 
     int rc = unifyfs_initialize(val, options, options_ct, &fshdl);
     assert(rc == UNIFYFS_SUCCESS);
-    fs::path unifyfs_filename = fs::path(unifyfs_path) / filename;
-    unifyfs_gfid gfid = 0;
     filename = filename + "_" + std::to_string(comm_rank) + "_of_" +
                std::to_string(comm_size);
+    fs::path unifyfs_filename = fs::path(unifyfs_path) / filename;
+    unifyfs_gfid gfid = 0;
     rc = UNIFYFS_SUCCESS;
     int create_flags = 0;
     rc = unifyfs_create(fshdl, create_flags, unifyfs_filename.c_str(), &gfid);
@@ -126,6 +126,7 @@ int main(int argc, char *argv[]) {
 
     fs::path full_filename_path;
     full_filename_path = fs::path("/dev/shm") / filename;
+    printf("flushing to %s rank %d\n", filename.c_str(), comm_rank);
     if (bug == 1) {
       printf("Running transfer\n");
       unifyfs_transfer_request mv_req;
