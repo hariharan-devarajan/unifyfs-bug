@@ -36,12 +36,12 @@
   Output
   ```bash
   Running transfer
-2023-03-27T09:36:22 tid=30501 @ forward_to_server() [margo_client.c:233] margo_forward_timed() failed - HG_TIMEOUT
-2023-03-27T09:36:22 tid=30501 @ invoke_client_transfer_rpc() [margo_client.c:614] forward of transfer rpc to server failed
-unifyfs-bug: /g/g92/haridev/project/unifyfs-bug/bug.cpp:137: int main(int, char**): Assertion `rc == UNIFYFS_SUCCESS' failed.
-[lassen1:30501] *** Process received signal ***
-[lassen1:30501] Signal: Aborted (6)
-[lassen1:30501] Signal code:  (-6)
+  2023-03-27T09:36:22 tid=30501 @ forward_to_server() [margo_client.c:233] margo_forward_timed() failed - HG_TIMEOUT
+  2023-03-27T09:36:22 tid=30501 @ invoke_client_transfer_rpc() [margo_client.c:614] forward of transfer rpc to server failed
+  unifyfs-bug: /g/g92/haridev/project/unifyfs-bug/bug.cpp:137: int main(int, char**): Assertion `rc == UNIFYFS_SUCCESS' failed.
+  [lassen1:30501] *** Process received signal ***
+  [lassen1:30501] Signal: Aborted (6)
+  [lassen1:30501] Signal code:  (-6)
 ```
   ## Bug 2
 
