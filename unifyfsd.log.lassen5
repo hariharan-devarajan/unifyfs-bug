@@ -1,0 +1,452 @@
+UNIFYFS CONFIG: unifyfs.cleanup = off
+UNIFYFS CONFIG: unifyfs.consistency = LAMINATED
+UNIFYFS CONFIG: unifyfs.daemonize = off
+UNIFYFS CONFIG: unifyfs.mountpoint = /unifyfs
+UNIFYFS CONFIG: client.fsync_persist = on
+UNIFYFS CONFIG: client.local_extents = off
+UNIFYFS CONFIG: client.node_local_extents = off
+UNIFYFS CONFIG: client.max_files = 128
+UNIFYFS CONFIG: client.write_index_size = 20971520
+UNIFYFS CONFIG: client.write_sync = off
+UNIFYFS CONFIG: client.super_magic = on
+UNIFYFS CONFIG: log.verbosity = 5
+UNIFYFS CONFIG: log.file = unifyfsd.log
+UNIFYFS CONFIG: log.dir = /g/g92/haridev/unifyfs/logs
+UNIFYFS CONFIG: log.on_error = off
+UNIFYFS CONFIG: logio.chunk_size = 4194304
+UNIFYFS CONFIG: logio.shmem_size = 268435456
+UNIFYFS CONFIG: logio.spill_size = 4294967296
+UNIFYFS CONFIG: margo.client_pool_size = 4
+UNIFYFS CONFIG: margo.client_timeout = 5000
+UNIFYFS CONFIG: margo.lazy_connect = on
+UNIFYFS CONFIG: margo.server_pool_size = 4
+UNIFYFS CONFIG: margo.server_timeout = 15000
+UNIFYFS CONFIG: margo.tcp = on
+UNIFYFS CONFIG: meta.range_size = 1048576
+UNIFYFS CONFIG: runstate.dir = /var/tmp
+UNIFYFS CONFIG: server.hostfile = /p/gpfs1/iopp/unifyfs/share-dir/unifyfsd.hosts
+UNIFYFS CONFIG: server.init_timeout = 120
+UNIFYFS CONFIG: server.local_extents = off
+UNIFYFS CONFIG: server.max_app_clients = 256
+UNIFYFS CONFIG: sharedfs.dir = /p/gpfs1/iopp/unifyfs/share-dir
+2023-04-03T10:42:00 tid=21573 @ process_servers_hostfile() [unifyfs_server.c:195] found myself at hostfile index=1
+2023-04-03T10:42:00 tid=21573 @ process_servers_hostfile() [unifyfs_server.c:203] set pmi rank to host index 1
+2023-04-03T10:42:00 tid=21573 @ main() [unifyfs_server.c:417] initializing RPC service
+# [14974375.466767] mercury->mem: [warning] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/na/na_sm.c:1363
+ # na_sm_shm_map(): Not aligned properly, page size=65536 bytes, length=602112 bytes
+2023-04-03T10:42:00 tid=21573 @ setup_local_target() [margo_server.c:270] shared-memory margo RPC server: na+sm://21573-0
+2023-04-03T10:42:00 tid=21573 @ rpc_publish_local_server_addr() [../../common/src/unifyfs_rpc_util.c:33] publishing client-server rpc address 'na+sm://21573-0'
+2023-04-03T10:42:00 tid=21573 @ setup_remote_target() [margo_server.c:140] margo RPC server: ofi+tcp;ofi_rxm://192.168.128.5:40579
+2023-04-03T10:42:00 tid=21573 @ rpc_publish_remote_server_addr() [../../common/src/unifyfs_rpc_util.c:51] publishing server-server rpc address 'ofi+tcp;ofi_rxm://192.168.128.5:40579'
+2023-04-03T10:42:00 tid=21573 @ main() [unifyfs_server.c:465] launching service manager thread
+2023-04-03T10:42:00 tid=21573 @ main() [unifyfs_server.c:472] initializing file operations
+2023-04-03T10:42:00 tid=21588 @ service_manager_thread() [unifyfs_service_manager.c:1441] I am the service manager thread!
+2023-04-03T10:42:00 tid=21573 @ rpc_init() [unifyfs_fops_rpc.c:28] initializing RPC file operations..
+2023-04-03T10:42:00 tid=21573 @ main() [unifyfs_server.c:479] connecting rpc servers
+2023-04-03T10:42:10 tid=21573 @ main() [unifyfs_server.c:489] publishing server pid
+2023-04-03T10:42:10 tid=21573 @ rpc_lookup_remote_server_addr() [../../common/src/unifyfs_rpc_util.c:110] found server 0 rpc address 'ofi+tcp;ofi_rxm://192.168.128.6:44751'
+2023-04-03T10:42:10 tid=21573 @ margo_connect_server() [margo_server.c:495] server rank=0, margo_addr=ofi+tcp;ofi_rxm://192.168.128.6:44751
+2023-04-03T10:42:10 tid=21573 @ main() [unifyfs_server.c:497] server[1] - finished initialization
+2023-04-03T10:42:16 tid=21576 @ unifyfs_mount_rpc() [unifyfs_client_rpc.c:142] creating new application for app_id=1511587981
+2023-04-03T10:42:16 tid=21576 @ unifyfs_mount_rpc() [unifyfs_client_rpc.c:152] creating new app client for na+sm://21749-0
+2023-04-03T10:42:16 tid=21576 @ unifyfs_mount_rpc() [unifyfs_client_rpc.c:163] created new application client 1511587981:1
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1671] I am request manager [app=1511587981:client=1] thread!
+2023-04-03T10:42:16 tid=21576 @ create_mountpoint_dir() [unifyfs_client_rpc.c:75] creating global file metadata for mountpoint:
+2023-04-03T10:42:16 tid=21576 @ debug_print_file_attr() [../../common/src/unifyfs_meta.h:140] fileattr(0x20000355ff40) - gfid=1511587981 filename=/unifyfs
+2023-04-03T10:42:16 tid=21576 @ debug_print_file_attr() [../../common/src/unifyfs_meta.h:142]              - sz=0 mode=40755 uid=35619 gid=35619
+2023-04-03T10:42:16 tid=21576 @ debug_print_file_attr() [../../common/src/unifyfs_meta.h:144]              - shared=1 laminated=0
+2023-04-03T10:42:16 tid=21576 @ debug_print_file_attr() [../../common/src/unifyfs_meta.h:148]              - atime=1680543736.943432581 ctime=1680543736.943432581 mtime=1680543736.943432581
+2023-04-03T10:42:16 tid=21576 @ signal_new_requests() [unifyfs_request_manager.c:271] signaling new requests
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1721] RM[1511587981:1] got work
+2023-04-03T10:42:16 tid=21756 @ rm_process_client_requests() [unifyfs_request_manager.c:1553] processing 1 client requests
+2023-04-03T10:42:16 tid=21756 @ process_metaset_rpc() [unifyfs_request_manager.c:1263] setting metadata for gfid=1511587981
+2023-04-03T10:42:16 tid=21577 @ signal_new_requests() [unifyfs_request_manager.c:271] signaling new requests
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1721] RM[1511587981:1] got work
+2023-04-03T10:42:16 tid=21756 @ rm_process_client_requests() [unifyfs_request_manager.c:1553] processing 1 client requests
+2023-04-03T10:42:16 tid=21756 @ process_attach_rpc() [unifyfs_request_manager.c:1046] attaching client 1511587981:1
+2023-04-03T10:42:16 tid=21584 @ metaset_rpc() [unifyfs_p2p_rpc.c:1095] metaset rpc handler
+2023-04-03T10:42:16 tid=21584 @ signal_svcmgr() [unifyfs_service_manager.c:112] signaling new service requests
+2023-04-03T10:42:16 tid=21588 @ service_manager_thread() [unifyfs_service_manager.c:1508] SM got work
+2023-04-03T10:42:16 tid=21588 @ process_service_requests() [unifyfs_service_manager.c:1343] processing 1 service requests
+2023-04-03T10:42:16 tid=21588 @ sm_set_fileattr() [unifyfs_service_manager.c:496] create requested for existing gfid=1511587981
+2023-04-03T10:42:16 tid=21588 @ service_manager_thread() [unifyfs_service_manager.c:1470] failed to process service requests
+2023-04-03T10:42:16 tid=21756 @ unifyfs_logio_init() [../../common/src/unifyfs_logio.c:221] shmem header - hdr_sz=65536, data_sz=1072693248, data_offset=65536
+2023-04-03T10:42:16 tid=21756 @ get_page_size() [../../common/src/unifyfs_logio.c:83] returning page size 65536 B
+2023-04-03T10:42:16 tid=21756 @ map_spillfile() [../../common/src/unifyfs_logio.c:165] mapping spillfile - fd=25, pgsz=65536
+2023-04-03T10:42:16 tid=21756 @ unifyfs_logio_init() [../../common/src/unifyfs_logio.c:251] spill header - hdr_sz=65536, data_sz=4194304, data_offset=65536
+2023-04-03T10:42:16 tid=21756 @ unifyfs_logio_init() [../../common/src/unifyfs_logio.c:270] logio_context for client [1511587981:1] - shmem(sz=1073741824, hdr=0x20002c001b20), spill(sz=5242880, hdr=0x200000290000)
+2023-04-03T10:42:16 tid=21756 @ get_page_size() [../../common/src/unifyfs_logio.c:83] returning page size 65536 B
+2023-04-03T10:42:16 tid=21578 @ signal_new_requests() [unifyfs_request_manager.c:271] signaling new requests
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1721] RM[1511587981:1] got work
+2023-04-03T10:42:16 tid=21756 @ rm_process_client_requests() [unifyfs_request_manager.c:1553] processing 1 client requests
+2023-04-03T10:42:16 tid=21756 @ process_metaset_rpc() [unifyfs_request_manager.c:1263] setting metadata for gfid=1668644357
+2023-04-03T10:42:16 tid=21576 @ signal_new_requests() [unifyfs_request_manager.c:271] signaling new requests
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1721] RM[1511587981:1] got work
+2023-04-03T10:42:16 tid=21756 @ rm_process_client_requests() [unifyfs_request_manager.c:1553] processing 1 client requests
+2023-04-03T10:42:16 tid=21756 @ process_fsync_rpc() [unifyfs_request_manager.c:1129] syncing gfid=1668644357
+2023-04-03T10:42:16 tid=21756 @ unifyfs_inode_add_extents() [unifyfs_inode.c:398] added 1024 extents to inode (gfid=1668644357, filesize=4194304)
+2023-04-03T10:42:16 tid=21577 @ signal_new_requests() [unifyfs_request_manager.c:271] signaling new requests
+2023-04-03T10:42:16 tid=21756 @ request_manager_thread() [unifyfs_request_manager.c:1721] RM[1511587981:1] got work
+2023-04-03T10:42:16 tid=21756 @ rm_process_client_requests() [unifyfs_request_manager.c:1553] processing 1 client requests
+2023-04-03T10:42:16 tid=21756 @ process_transfer_rpc() [unifyfs_request_manager.c:1347] transferring gfid=1668644357 to file /dev/shm/test.dat_0_of_2
+2023-04-03T10:42:16 tid=21756 @ sm_transfer() [unifyfs_service_manager.c:584] transfer - gfid=1668644357 mode=1 file=/dev/shm/test.dat_0_of_2
+2023-04-03T10:42:16 tid=21756 @ signal_svcmgr() [unifyfs_service_manager.c:112] signaling new service requests
+2023-04-03T10:42:16 tid=21756 @ unifyfs_invoke_broadcast_transfer() [unifyfs_group_rpc.c:944] BCAST_RPC: starting transfer(mode=1) for gfid=1668644357 to file /dev/shm/test.dat_0_of_2
+2023-04-03T10:42:16 tid=21588 @ service_manager_thread() [unifyfs_service_manager.c:1508] SM got work
+2023-04-03T10:42:16 tid=21756 @ collective_create() [unifyfs_group_rpc.c:235] BCAST_RPC: collective(0x20002c001f00) create (type=14)
+2023-04-03T10:42:16 tid=21588 @ spawn_local_transfers() [unifyfs_service_manager.c:706] processing 1 local transfers
+2023-04-03T10:42:16 tid=21756 @ collective_forward() [unifyfs_group_rpc.c:352] BCAST_RPC: collective(0x20002c001f00) forward
+2023-04-03T10:42:16 tid=21757 @ transfer_helper_thread() [unifyfs_transfer.c:212] I am transfer thread for gfid=1668644357 file=/dev/shm/test.dat_0_of_2 collective=(nil)
+2023-04-03T10:42:16 tid=21587 @ transfer_bcast_rpc() [unifyfs_group_rpc.c:850] BCAST_RPC: transfer handler
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=0, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21587 @ collective_create() [unifyfs_group_rpc.c:235] BCAST_RPC: collective(0x200080000970) create (type=14)
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=0, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21587 @ signal_svcmgr() [unifyfs_service_manager.c:112] signaling new service requests
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=4096, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21588 @ service_manager_thread() [unifyfs_service_manager.c:1508] SM got work
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=1048576, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21588 @ process_service_requests() [unifyfs_service_manager.c:1343] processing 1 service requests
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=8192, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21588 @ process_transfer_bcast_rpc() [unifyfs_service_manager.c:1246] gfid=2114488788 dest_file=/dev/shm/test.dat_1_of_2
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=2097152, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21588 @ sm_transfer() [unifyfs_service_manager.c:584] transfer - gfid=2114488788 mode=1 file=/dev/shm/test.dat_1_of_2
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=12288, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21588 @ spawn_local_transfers() [unifyfs_service_manager.c:706] processing 1 local transfers
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=3145728, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=16384, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=4194304, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21758 @ transfer_helper_thread() [unifyfs_transfer.c:212] I am transfer thread for gfid=2114488788 file=/dev/shm/test.dat_1_of_2 collective=0x200080000970
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=20480, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21758 @ collective_finish() [unifyfs_group_rpc.c:423] BCAST_RPC: collective(0x200080000970) finish
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=5242880, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=24576, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=6291456, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21758 @ collective_finish() [unifyfs_group_rpc.c:440] BCAST_RPC: collective(0x200080000970, op=14) responded
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=28672, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21758 @ collective_cleanup() [unifyfs_group_rpc.c:307] BCAST_RPC: collective(0x200080000970) cleanup
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=7340032, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21758 @ collective_cleanup() [unifyfs_group_rpc.c:307] BCAST_RPC: collective(0x200080000970) cleanup
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=32768, sz=4096) from log[1511587981:1]
+# [14974391.698822] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury.c:1743
+ # HG_Free_input(): Could not get proc info
+# [14974391.698851] mercury->op: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/na/na_ofi.c:4672
+ # na_ofi_msg_recv_unexpected(): Attempting to use OP ID that was not completed
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=8388608, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+# [14974391.698861] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury_core.c:2594
+ # hg_core_post(): Could not post unexpected recv for input buffer (NA_BUSY)
+# [14974391.698869] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury_core.c:2493
+ # hg_core_reset_post(): Cannot post handle
+# [14974391.698876] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury_core.c:2188
+ # hg_core_destroy(): Cannot repost handle
+# [14974391.698882] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury_core.c:4862
+ # HG_Core_destroy(): Could not destroy handle
+# [14974391.698890] mercury->hg: [error] /var/tmp/haridev/spack-stage/spack-stage-mercury-2.1.0-pjev5ztws3b6yrdyruu3432ja3nbof75/spack-src/src/mercury.c:1668
+ # HG_Destroy(): Could not set handle to be destroyed (HG_BUSY)
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=36864, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=9437184, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=40960, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=10485760, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=45056, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=11534336, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=49152, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=12582912, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=53248, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=13631488, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=57344, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=14680064, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=61440, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=15728640, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=65536, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=16777216, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=69632, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=17825792, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=73728, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=18874368, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=77824, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=19922944, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=81920, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=20971520, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=86016, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=22020096, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=90112, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=23068672, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=94208, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=24117248, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=98304, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=25165824, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=102400, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=26214400, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=106496, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=27262976, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=110592, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=28311552, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=114688, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=29360128, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=118784, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=30408704, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=122880, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=31457280, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=126976, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=32505856, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=131072, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=33554432, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=135168, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=34603008, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=139264, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=35651584, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=143360, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=36700160, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=147456, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=37748736, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=151552, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=38797312, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=155648, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=39845888, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=159744, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=40894464, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=163840, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=41943040, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=167936, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=42991616, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=172032, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=44040192, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=176128, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=45088768, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=180224, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=46137344, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=184320, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=47185920, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=188416, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=48234496, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=192512, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=49283072, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=196608, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=50331648, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=200704, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=51380224, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=204800, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=52428800, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=208896, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=53477376, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=212992, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=54525952, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=217088, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=55574528, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=221184, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=56623104, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=225280, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=57671680, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=229376, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=58720256, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=233472, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=59768832, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=237568, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=60817408, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=241664, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=61865984, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=245760, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=62914560, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=249856, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=63963136, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=253952, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=65011712, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=258048, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=66060288, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=262144, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=67108864, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=266240, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=68157440, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=270336, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=69206016, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=274432, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=70254592, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=278528, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=71303168, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=282624, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=72351744, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=286720, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=73400320, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=290816, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=74448896, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=294912, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=75497472, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=299008, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=76546048, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=303104, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=77594624, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=307200, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=78643200, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=311296, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=79691776, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=315392, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=80740352, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=319488, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=81788928, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=323584, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=82837504, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21756 @ rpc_lookup_remote_server_addr() [../../common/src/unifyfs_rpc_util.c:110] found server 1 rpc address 'ofi+tcp;ofi_rxm://192.168.128.5:40579'
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=327680, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21756 @ margo_connect_server() [margo_server.c:495] server rank=1, margo_addr=ofi+tcp;ofi_rxm://192.168.128.5:40579
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=83886080, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=331776, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=84934656, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=335872, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=85983232, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=339968, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=87031808, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=344064, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=88080384, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=348160, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=89128960, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=352256, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=90177536, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=356352, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=91226112, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=360448, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=92274688, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=364544, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=93323264, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=368640, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=94371840, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=372736, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=95420416, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=376832, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=96468992, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21584 @ bcast_progress_rpc() [unifyfs_group_rpc.c:503] BCAST_RPC: bcast progress collective(0x20002c001f00)
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=380928, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21584 @ collective_finish() [unifyfs_group_rpc.c:423] BCAST_RPC: collective(0x20002c001f00) finish
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=97517568, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=385024, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=98566144, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=389120, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=99614720, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=393216, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=100663296, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=397312, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=101711872, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=401408, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=102760448, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=405504, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=103809024, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=409600, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=104857600, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=413696, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=105906176, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=417792, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=106954752, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=421888, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=108003328, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=425984, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=109051904, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=430080, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=110100480, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=434176, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=111149056, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=438272, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=112197632, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=442368, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=113246208, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=446464, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=114294784, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=450560, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=115343360, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=454656, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=116391936, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=458752, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=117440512, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=462848, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=118489088, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=466944, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=119537664, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=471040, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=120586240, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=475136, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=121634816, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=479232, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=122683392, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=483328, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=123731968, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=487424, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=124780544, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=491520, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=125829120, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=495616, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=126877696, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=499712, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=127926272, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=503808, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=128974848, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=507904, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=130023424, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=512000, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=131072000, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=516096, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=132120576, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=520192, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=133169152, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=524288, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=134217728, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=528384, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=135266304, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=532480, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=136314880, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=536576, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=137363456, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=540672, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=138412032, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=544768, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=139460608, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=548864, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=140509184, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=552960, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=141557760, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=557056, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=142606336, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=561152, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=143654912, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=565248, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=144703488, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=569344, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=145752064, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=573440, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=146800640, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=577536, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=147849216, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=581632, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=148897792, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=585728, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=149946368, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=589824, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=150994944, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=593920, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=152043520, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=598016, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=153092096, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=602112, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=154140672, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=606208, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=155189248, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=610304, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=156237824, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=614400, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=157286400, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=618496, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=158334976, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=622592, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=159383552, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=626688, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=160432128, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=630784, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=161480704, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=634880, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=162529280, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=638976, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=163577856, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=643072, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=164626432, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=647168, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=165675008, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=651264, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=166723584, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0
+2023-04-03T10:42:16 tid=21757 @ read_local_extent() [unifyfs_transfer.c:87] reading extent(file_offset=655360, sz=4096) from log[1511587981:1]
+2023-04-03T10:42:16 tid=21757 @ unifyfs_logio_read() [../../common/src/unifyfs_logio.c:814] log_off=167772160, nbytes=4096 : mem_sz=4096 spill_sz=0 spill_off=0

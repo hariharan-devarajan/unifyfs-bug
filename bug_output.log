@@ -1,0 +1,33 @@
+[dependency] [haridev@lassen6:unifyfs-bug]$ jsrun -r 1 -a 1 -c 1  -d packed $PWD/build/unifyfs-bug 1
+2023-04-03T10:42:21 tid=169121 @ forward_to_server() [margo_client.c:234] margo_forward_timed() failed - HG_TIMEOUT
+2023-04-03T10:42:21 tid=169121 @ invoke_client_transfer_rpc() [margo_client.c:615] forward of transfer rpc to server failed
+unifyfs-bug: /g/g92/haridev/project/unifyfs-bug/bug.cpp:139: int main(int, char**): Assertion `rc == UNIFYFS_SUCCESS' failed.
+creating /unifyfs/test.dat_1_of_2 rank 1
+flushing to /dev/shm/test.dat_1_of_2 rank 1
+Running transfer
+[lassen6:169121] *** Process received signal ***
+[lassen6:169121] Signal: Aborted (6)
+[lassen6:169121] Signal code:  (-6)
+2023-04-03T10:42:21 tid=21749 @ forward_to_server() [margo_client.c:234] margo_forward_timed() failed - HG_TIMEOUT
+2023-04-03T10:42:21 tid=21749 @ invoke_client_transfer_rpc() [margo_client.c:615] forward of transfer rpc to server failed
+unifyfs-bug: /g/g92/haridev/project/unifyfs-bug/bug.cpp:139: int main(int, char**): Assertion `rc == UNIFYFS_SUCCESS' failed.
+[lassen5:21749] *** Process received signal ***
+[lassen5:21749] Signal: Aborted (6)
+[lassen5:21749] Signal code:  (-6)
+creating /unifyfs/test.dat_0_of_2 rank 0
+flushing to /dev/shm/test.dat_0_of_2 rank 0
+Running transfer
+<< Rank 1: Generating lwcore_cpu.4690638_12.1 on lassen6 Mon Apr  3 10:42:22 PDT 2023 (LLNL_COREDUMP_FORMAT_CPU=lwcore) >>
+<< Rank 0: Generating lwcore_cpu.4690638_12.0 on lassen5 Mon Apr  3 10:42:22 PDT 2023 (LLNL_COREDUMP_FORMAT_CPU=lwcore) >>
+<< Rank 1:  Generated lwcore_cpu.4690638_12.1 on lassen6 Mon Apr  3 10:42:22 PDT 2023 in 0 secs >>
+<< Rank 1: Waiting 60 secs before aborting task on lassen6 Mon Apr  3 10:42:22 PDT 2023 (LLNL_COREDUMP_WAIT_FOR_OTHERS=60) >>
+<< Rank 0:  Generated lwcore_cpu.4690638_12.0 on lassen5 Mon Apr  3 10:42:23 PDT 2023 in 1 secs >>
+<< Rank 0: Waiting 60 secs before aborting task on lassen5 Mon Apr  3 10:42:23 PDT 2023 (LLNL_COREDUMP_WAIT_FOR_OTHERS=60) >>
+^C[lassen6:169121] Error: Cannot get stack trace information. Return Code 2
+Unable to print stack trace!
+[lassen6:169121] *** End of error message ***
+[lassen5:21749] Error: Cannot get stack trace information. Return Code 2
+Unable to print stack trace!
+[lassen5:21749] *** End of error message ***
+ERROR:  One or more process (first noticed rank 0) terminated with signal 6
+
